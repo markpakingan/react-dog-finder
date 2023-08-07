@@ -1,15 +1,19 @@
 // Dogs.js file
 import React from "react";
-import Whiskey from "./Whiskey";
-// import Duke from "./Duke";
-// import Perry from "./Perry";
-// import Tubby from "./Tubby";
+import { Link } from "react-router-dom";
 
-const Dogs = () => {
+
+const Dogs = ({dogs}) => {
 
     return (
         <div>
-            "This is the dog space!"
+            <ul>
+                {dogs.map((dog)=>(
+                    <li key={dog.name}>
+                    <Link to={`/dog/${dog.name.toLowerCase()}`}>{dog.name}</Link>
+                    </li>
+                ))}
+            </ul>
         </div>
     )
 }

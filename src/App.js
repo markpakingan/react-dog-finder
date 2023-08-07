@@ -2,33 +2,27 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Dogs from './Dogs';
 import Navbar from './Navbar';
-import Whiskey from './Whiskey';
-import Perry from './Perry';
-import Tubby from './Tubby'
-import Duke from './Duke'
 
 // photo sources
 import whiskeyphoto from './whiskeyphoto.jpg'
 import tubbyphoto from "./tubbyphoto.jpg"
 import perryphoto from './perryphoto.jpg'
 import dukephoto from "./dukephoto.jpg"
+import DogDetails from './DogDetails';
 
 
-const App = () => {
+const App = ({dogs}) => {
 
   return(
     <div> 
       <BrowserRouter>
 
-          <Navbar/>
-
-          <Routes>
-            <Route exact path="/whiskey" element={<Whiskey/>}/>
-            <Route exact path="/duke" element={<Duke/>}/>
-            <Route exact path="/perry" element={<Perry/>}/>
-            <Route exact path="/tubby" element={<Tubby/>}/>
-          </Routes>
-
+        <Navbar/>
+        <Routes>
+            <Route path="/" element={<Dogs dogs={dogs} />} />
+            <Route path="/dog/:name" element={<DogDetails dogs={dogs} />} />
+        </Routes>
+        
       </BrowserRouter>     
     </div>
   )

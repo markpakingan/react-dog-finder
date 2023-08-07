@@ -9,10 +9,10 @@ const Navbar = () => {
     return (
         <nav>
             <NavLink exact to="/"> Home </NavLink>
-            <NavLink exact to="whiskey"> Whiskey </NavLink>
-            <NavLink exact to="duke"> Duke </NavLink>
-            <NavLink exact to="perry"> Perry </NavLink>
-            <NavLink exact to="tubby"> Tubby </NavLink>
+            <NavLink exact to="dog/whiskey"> Whiskey </NavLink>
+            <NavLink exact to="dog/duke"> Duke </NavLink>
+            <NavLink exact to="dog/perry"> Perry </NavLink>
+            <NavLink exact to="dog/tubby"> Tubby </NavLink>
         </nav>
     )
 }
